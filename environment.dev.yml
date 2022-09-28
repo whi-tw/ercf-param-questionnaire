@@ -1,0 +1,14 @@
+name: ercf-tip-questionnaire-dev
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python=3.10
+  - django
+  - pre-commit
+  - black
+  - pytest
+  - flake8
+  - pip
+  - pip:
+      - django-tailwind

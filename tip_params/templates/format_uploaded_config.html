@@ -1,0 +1,29 @@
+{% load tailwind_tags %}
+<!doctype html>
+<html>
+
+<head>
+    {% tailwind_css %}
+</head>
+
+<body>
+
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <h3>Hotend</h3>
+            {{ hotend_form }}
+            <h3>Nozzle</h3>
+            {{ nozzle_form }}
+            {% for form_collection in params_forms %}
+            <h3>Filament</h3>
+            {{ form_collection.filament }}
+            <h3>Toolchange Params</h3>
+            {{ form_collection.toolchange_params }}
+            {% endfor %}
+            <input type="submit" value=Submit>
+        </form>
+    </div>
+</body>
+
+</html>
